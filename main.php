@@ -25,14 +25,14 @@ echo "Enter the mass of an object in kilograms: ";
 $mass_kg = trim(fgets(STDIN)); // Read user input
 
 // Validate the input
-if (isValidNumber($mass_kg)) {
+if (isValidNumber($mass_kg) && $mass_kg >= 0) {
     // Calculate energy
     $energy_joules = calculateEnergy(floatval($mass_kg));
 
     // Display the result
     echo "The mass of {$mass_kg} kg produces {$energy_joules} J in energy.\n";
 } else {
-    echo "Error: Please enter a valid number for the mass.\n";
+    echo "Error: Please enter a valid non-negative number for the mass.\n";
 }
 
 // End program
